@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "Google Account Switcher for Firebase Projects",
+  "description": "Allow you to switch google accounts on Firebase Projects without any authentication.",
+  "version": "0.1",
+
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+
+  "content_scripts": [
+      {
+          "matches": ["https://console.firebase.google.com/u/*"],
+          "js": ["js/vendor.js", "js/content_script.js"]
+      }
+  ],
+
+  "background": {
+    "scripts": ["js/vendor.js", "js/background.js"]
+  },
+
+  "permissions": [
+    "storage",
+    "https://console.firebase.google.com/u/*"
+  ]
+}

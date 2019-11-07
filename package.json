@@ -1,0 +1,45 @@
+{
+  "name": "firebase-google-account-switcher",
+  "version": "1.0.0",
+  "description": "A Google Chrome extension allows to switch accounts without frustrations when a selected account does not have permission to see a Firebase project.",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --config webpack/webpack.dev.js --watch",
+    "build": "webpack --config webpack/webpack.prod.js",
+    "clean": "rimraf dist",
+    "test": "npx jest"
+  },
+  "author": "Jumpei Matsuda",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmatsu/firebase-google-account-switcher"
+  },
+  "dependencies": {
+    "@types/blueimp-md5": "^2.7.0",
+    "blueimp-md5": "^2.12.0",
+    "jquery": "^3.4.1",
+    "moment": "~2.24.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.86",
+    "@types/jest": "^24.0.19",
+    "@types/jquery": "^3.3.30",
+    "@typescript-eslint/eslint-plugin": "^2.6.1",
+    "@typescript-eslint/parser": "^2.6.1",
+    "copy-webpack-plugin": "^5.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-jest": "^23.0.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.1.0",
+    "ts-loader": "^5.4.5",
+    "typescript": "~3.4.5",
+    "webpack": "~4.17.2",
+    "webpack-cli": "~3.1.0",
+    "webpack-merge": "~4.2.1"
+  }
+}

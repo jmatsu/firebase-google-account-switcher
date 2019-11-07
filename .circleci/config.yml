@@ -1,0 +1,51 @@
+version: 2.1
+
+executors: &executors
+  node:
+    docker:
+      - image: circleci/node:12.12.0-stretch
+
+commands: &commands
+  cache_yarn:
+    parameters:
+      cache_version:
+        type: string
+        default: v1
+    steps:
+      - restore_cache:
+          keys:
+          - npm-cache-{{ checksum "./yarn.lock" }}-<< parameters.cache_version >>-
+          - npm-cache-{{ checksum "./yarn.lock" }}-
+      - run: yarn install --frozen-lockfile
+      - save_cache:
+          paths:
+          - ~/.cache/yarn
+          key: npm-cache-{{ checksum "./yarn.lock" }}-<< parameters.cache_version >>-
+
+orbs:
+  node:
+    commands: *commands
+    executors: *executors
+    jobs:
+      build:
+        working_directory: ~/firebase-google-account-switcher
+        executor: node
+        steps:
+          - checkout
+          - cache_yarn
+          - run: yarn build
+          - run: yarn eslint src --ext .ts
+      test:
+        working_directory: ~/firebase-google-account-switcher
+        executor: node
+        steps:
+          - checkout
+          - cache_yarn
+          - run: yarn test
+
+workflows:
+  version: 2
+  on_commit:
+    jobs:
+      - node/build
+      - node/test
