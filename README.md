@@ -13,11 +13,11 @@ Currently, Firebase does not have a Google account switcher like other Google pa
 - Install the extension
 - Add en email of a candidate account from options page
 
-![Open options page](./assets/ss-option.png)
+<img src="./assets/ss-option.png" width="400" >
 
 - Open/reload a *forbidden* firebase project, then you can see account list.
 
-![Show account list](./assets/ss-select.png)
+<img src="./assets/ss-select.png" width="400" >
 
 - Click the account component
 - Now you can see the project correctly
