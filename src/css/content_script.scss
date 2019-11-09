@@ -1,5 +1,12 @@
 #firebase-account-switcher {
-  padding: 8px;
+  position: fixed;
+
+  /** experimental values **/
+  right: 22px;
+  top: 6px;
+  z-index: 4;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 
   .drop-menu-anchor {
     position: relative;
@@ -9,13 +16,14 @@
       background-color: #f57c00;
       color: white;
       padding: 8px;
-      font-size: 14px;
+      font-size: 1em;
       border: none;
       cursor: pointer;
 
       &:hover,
       &:focus {
         background-color: #ffa000;
+        transform: scale(1.05);
       }
     }
 
@@ -33,20 +41,21 @@
       background-color: #f3f3f3;
       min-width: 240px;
       box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
-      z-index: 5; /** md-toolbar has z-index 2 **/
+      z-index: 5;
     }
 
     div#accounts-container {
-      width: 100%;
-
-      .account-row {
+      button.account-row {
         width: 100%;
-
         color: black;
-        font-size: 14px;
+        background-color: #f3f3f3;
+        font-size: 1em;
         text-align: center;
-        padding: 4px 8px;
-        display: block;
+        padding: 8px;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        border: none;
+        cursor: pointer;
 
         &:hover {
           background-color: #dedede;

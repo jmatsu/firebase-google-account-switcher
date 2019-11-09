@@ -17,7 +17,7 @@ const showSwitcherIfRequired = () => {
       const listAccountsUsecase = new ListAccountsUsecase();
       const accounts = await listAccountsUsecase.apply({});
 
-      $("md-toolbar").append(
+      $("body").append(
         $(`
       <div id="firebase-account-switcher">
       <div class="drop-menu-anchor">
@@ -32,7 +32,7 @@ const showSwitcherIfRequired = () => {
       </div>
     `)
       );
-      const switcher = $("md-toolbar").find("#firebase-account-switcher");
+      const switcher = $("body").find("#firebase-account-switcher");
 
       const switcherContent = switcher.find("#switcher-content");
 
@@ -57,7 +57,7 @@ const showSwitcherIfRequired = () => {
       const accountsContainer = switcher.find("#accounts-container");
 
       accounts.forEach(account => {
-        const item = $('<p class="account-row"></p>');
+        const item = $('<button class="account-row"></button>');
 
         item.click(async () => {
           switcherContent.addClass("drop-menu-content-hidden");
