@@ -9,7 +9,6 @@ import {
 import { ListAccountsUsecase } from "./usecase/list_accounts_usecase";
 import { DeleteProjectAssociationsUsecase } from "./usecase/delete_project_associations_usecase";
 import { SwitchAccountUsecase } from "./usecase/switch_account_usecase";
-import md5 = require("blueimp-md5");
 
 const showSwitcherIfRequired = () => {
   doThen(isShowingError, () => {
@@ -25,14 +24,6 @@ const showSwitcherIfRequired = () => {
           accounts
             .map(account => {
               const div = $('<div style="font-size: 10pt"></div>');
-              const img = $(
-                '<img style="border-radius: 50%; padding: 2px; width: 32px">'
-              );
-
-              const hash = md5(account.email.trim().toLowerCase());
-              img.attr("src", `https://www.gravatar.com/avatar/${hash}`);
-              img.attr("alt", account.email);
-              img.attr("title", account.email);
 
               div.click(async () => {
                 div.attr("disabled", `${true}`);
@@ -52,7 +43,6 @@ const showSwitcherIfRequired = () => {
                 });
               });
 
-              div.append(img);
               div.append(account.email);
               return div;
             })
