@@ -17,7 +17,7 @@ const appendAccount = (container, account: Account) => {
   const div = $("<div></div>");
   div.append(account.email);
 
-  const deleteButton = $("<button>Delete</button>");
+  const deleteButton = $('<a name="delete"> Delete</button>');
   deleteButton.click(async () => {
     const usecase = new DeleteAccountUsecase();
     await usecase.apply({ id: account.id });
