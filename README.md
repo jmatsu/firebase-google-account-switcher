@@ -8,18 +8,16 @@ A Google Chrome extension allows to switch accounts without frustrations when a 
 
 Currently, Firebase does not have a Google account switcher like other Google pages. So we need to modify the user's index in the URL of Firebase Project if `authuser-index <n>` does not have permission to see the project... it's terrible!
 
-![](assets/ss-select.png)
-
 ## How to use
 
 - Install the extension
 - Add en email of a candidate account from options page
 
-![Open options page](assets/ss-option.png)
+![Open options page](./assets/ss-option.png)
 
 - Open/reload a *forbidden* firebase project, then you can see account list.
 
-![Show account list](assets/ss-select.png)
+![Show account list](./assets/ss-select.png)
 
 - Click the account component
 - Now you can see the project correctly
