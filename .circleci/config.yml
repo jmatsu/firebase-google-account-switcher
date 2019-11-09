@@ -34,7 +34,8 @@ orbs:
           - checkout
           - cache_yarn
           - run: yarn build
-          - run: yarn eslint src --ext .ts
+          - run: yarn eslint src/js --ext .ts
+          - run: yarn stylelint src/css
       test:
         working_directory: ~/firebase-google-account-switcher
         executor: node
