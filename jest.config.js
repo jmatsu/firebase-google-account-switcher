@@ -1,6 +1,6 @@
 module.exports = {
     "roots": [
-        "src"
+        "src/js"
     ],
     "transform": {
         "^.+\\.ts$": "ts-jest"

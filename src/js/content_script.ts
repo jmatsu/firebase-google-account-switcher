@@ -10,6 +10,8 @@ import { ListAccountsUsecase } from "./usecase/list_accounts_usecase";
 import { DeleteProjectAssociationsUsecase } from "./usecase/delete_project_associations_usecase";
 import { SwitchAccountUsecase } from "./usecase/switch_account_usecase";
 
+import '../css/content_script.scss'
+
 const showSwitcherIfRequired = () => {
   doThen(isShowingError, () => {
     if (isForbiddenError()) {
@@ -23,7 +25,7 @@ const showSwitcherIfRequired = () => {
 
           accounts
             .map(account => {
-              const div = $('<div style="font-size: 10pt"></div>');
+              const div = $('<div id="xyz"></div>');
 
               div.click(async () => {
                 div.attr("disabled", `${true}`);
