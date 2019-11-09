@@ -42,6 +42,15 @@ orbs:
           - checkout
           - cache_yarn
           - run: yarn test
+      package:
+        working_directory: ~/firebase-google-account-switcher
+        executor: node
+        steps:
+          - checkout
+          - cache_yarn
+          - run: yarn package
+          - store_artifacts:
+              path: extension.zip
 
 workflows:
   version: 2
@@ -49,3 +58,9 @@ workflows:
     jobs:
       - node/build
       - node/test
+  on_release:
+    jobs:
+      - node/package:
+          filters:
+            branches:
+              only: /master/
