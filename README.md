@@ -1,3 +1,7 @@
+# ARCHIVED
+
+Because Firebase is currently showing their account switcher component! Thanks Firebase team!
+
 # Chrome Extension : Google Account Switcher for Firebase Projects
 
 A Google Chrome extension allows to switch accounts without frustrations when a selected account does not have permission to see a Firebase project.
